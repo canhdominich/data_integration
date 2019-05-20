@@ -1,0 +1,58 @@
+body{
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	line-height: 22px;
+	box-sizing: border-box;
+}
+
+#wrapper{
+	width: 100%;
+	background: #fff;
+}
+
+.wp-inner{
+	width: 1170px;
+	margin: 0px auto;
+}
+
+ul li{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+.fl-left{
+	float: left;
+}
+
+.fl-right{
+	float: right;
+}
+
+.clearfix{
+	display: block;
+	clear: both;
+}
+
+.clearfix:after{
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0px;
+	line-height: 0px;
+}
+
+.text-tran{
+	text-transform: uppercase;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.text-justify{
+	text-align: justify;
+}

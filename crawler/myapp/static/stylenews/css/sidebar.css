@@ -1,0 +1,33 @@
+#wr-content #sidebar{
+	width: 340px;
+	border-left: 1px solid #d8d8d8;
+	margin-top: 20px;
+	padding-left: 35px;
+	box-sizing: border-box;
+}
+
+#advertising{
+	width: 100%;
+	max-height : 350px;
+    box-sizing: border-box;
+}
+
+#advertising img{
+	width: 100%;
+	max-height : 350px;
+    box-sizing: border-box;
+}
+
+#most-read{
+	padding-top: 50px;
+}
+
+#most-read #suggest-title{
+	font-size: 21px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #01a050;
+}
+
+#most-read #suggest-title a{
+	color: #171616;
+}

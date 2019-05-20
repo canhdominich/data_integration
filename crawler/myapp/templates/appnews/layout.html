@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load staticfiles %}
+	<meta charset="UTF-8">
+	<title>Bài tập lớn</title>
+	<link rel="shortcut icon" type="image" href="{% static 'stylenews/images/home-02.png' %}">
+	<link rel="stylesheet" href="{% static 'stylenews/css/reset.css' %}">
+	<link rel="stylesheet" href="{% static 'stylenews/css/global.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'stylenews/css/header.css' %}">
+	<link rel="stylesheet" href="{% static 'stylenews/css/content.css' %}">
+	<link rel="stylesheet" href="{% static 'stylenews/css/sidebar.css' %}">
+	<link rel="stylesheet" href="{% static 'stylenews/css/footer.css' %}">
+	<link rel="stylesheet" href="{% static 'stylenews/css/copyright.css' %}">
+    {% block css %}{% endblock %}
+</head>
+<body>
+ 	{% block facebook %}{% endblock %}
+	<div id="wrapper">
+		<div id="header" class="clearfix">
+			<div class="wp-inner clearfix">
+				<a id="logo" href="/" class="fl-left">
+					<img src="{% static 'stylenews/images/home-02.png' %}" alt="Logo" title="Logo">
+				</a>
+
+				<ul id="main-menu" class="fl-left">
+					<li><a href="/">trang chủ</a></li>
+					<li><a href="/category/1">sự kiện</a></li>
+					<li><a href="/category/2">thế giới</a></li>
+					<li><a href="/category/3">sức khỏe</a></li>
+					<li><a href="/category/4">giáo dục</a></li>
+					<li><a href="/category/5">công nghệ</a></li>
+				</ul>
+
+				<!-- <form id="search" action="" class="fl-right">
+					<input id="search-text" type="text" placeholder="Tìm kiếm...">
+					<button id="search-button"><i class="icon-search"></i></button>
+				</form> -->
+
+				<form id="form-search" method="post">
+					<input type="text" class="textbox" placeholder="Search">
+					<input title="Search" value="" type="submit" class="button">
+				</form>
+			</div>
+		</div>
+
+		<div id="wr-content" class="wp-inner clearfix">
+			<div id="content" class="fl-left">
+                {% block content %}{% endblock %}
+			</div>
+
+			<div id="sidebar" class="fl-right">
+				<div id="advertising" class="clearfix">
+					<a href="">
+						<img src="{% static 'stylenews/images/advertising.gif' %}" alt="">
+					</a>
+				</div>
+
+				<div id="most-read">
+					<div id="suggest-title">
+						<a class="text-tran" href="">đọc nhiều nhất</a>
+					</div>
+
+					<div id="widget-content" class="fl-right">
+						<ul class="list-post">
+							{% if interestnewspaper != None %}
+								{% for item in interestnewspaper %}
+									<li>
+										<a href="/detail/{{item.slug}}">
+											<div class="fl-left list-post-image">
+												{% if item.thumbnail != None %}
+													<img src="{{item.thumbnail}}" alt="" class="image">
+												{% else %}
+													<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+												{% endif %}
+											</div>
+											<div class="fl-right list-post-title">
+												<h2>{{item.title}}</h2>
+											</div>
+										</a>
+									</li>
+								{% endfor %}
+							{% endif %}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="footer" class="wp-inner clearfix">
+			<div class="wp-inner">
+				<div id="about" class="fl-left">
+					<div class="footer-title clearfix"><p class="text-tran">Về chúng tôi</p></div>
+					<div id="text-about" class="clearfix">
+						<p style="text-align: justify; padding-top : 20px;">
+							Đỗ Đức Cảnh - 20150314
+						</p>
+						<p style="text-align: justify; ; padding-top : 20px;">
+							Bùi Thị Kim Anh - 20160027
+						</p>
+						<p style="text-align: justify; ; padding-top : 20px;">
+							Phạm Lê Tuấn Anh - 20160216
+						</p>
+					</div>
+				</div>
+
+				<div id="category" class="fl-left">
+					<div class="footer-title clearfix"><p class="text-tran">Danh mục</p></div>
+					<div id="text-category" class="clearfix">
+						<ul>
+							<li><i class="list"></i><a href="/">trang chủ</a></li>
+							<li><i class="list"></i><a href="/category/1">sự kiện</a></li>
+							<li><i class="list"></i><a href="/category/2">thế giới</a></li>
+							<li><i class="list"></i><a href="/category/3">sức khỏe</a></li>
+							<li><i class="list"></i><a href="/category/4">giáo dục</a></li>
+							<li><i class="list"></i><a href="/category/5">công nghệ</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div id="contact" class="fl-left">
+					<div class="footer-title clearfix">
+						<p class="text-tran">
+							Liên hệ
+						</p>
+					</div>
+					<div id="text-contact" class="clearfix">
+						<p><i class="tel"></i>Hotline: 0981 248 920</p>
+						<p><i class="email"></i>Support: canhdominich@gmail.com</p>
+						<p><i class="address"></i>Số 1 Đại Cồ Việt, Trường Đại học Bách Khoa Hà Nội</p>
+					</div>
+				</div>
+
+				<div id="fanpage" class="fl-right">
+					<div class="footer-title clearfix"><p class="text-tran">fanpage</p></div>
+
+					<div id="text-fanpage" class="clearfix">
+						<iframe class="video" src="https://www.youtube.com/embed/2vcp0fKq3aw?&rel=0&modestbranding=1&mute=0&autoplay=0&showinfo=0&fs=0"
+						frameborder="0">
+					</iframe>
+				</div>
+			</div>
+		</div>
+		<div id="copyright" class="text-center clearfix">
+			<p >
+				<i class="icon-copyright"></i>Copyright @2019 All rights reserved | Thiết kế và vận hành bởi :  Canh Dominich
+			</p>
+		</div>
+	</div>
+
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

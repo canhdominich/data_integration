@@ -1,0 +1,73 @@
+{% extends "appnews/layout.html" %}
+{% load staticfiles %}
+{% block css %}
+	<link rel="stylesheet" href="{% static 'stylenews/css/detail.css' %}">
+{% endblock %}
+
+{% block facebook %}
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=180768672798327&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+{% endblock %}
+
+{% block content %}
+	<div id="content" class="fl-left clearfix">
+			{% if newpaper != None %}
+			<div id="content" class="fl-left clearfix">
+			<div id="post-title clearfix">
+				<h1>{{newpaper.title}}</h1>
+			</div>
+
+			{% if newpaper.thumbnail != None %}
+				<div id="post-image-cover" class="clearfix">
+						<img src="{{newpaper.thumbnail}}" alt="" class="image">
+				</div>
+			{% endif %}
+
+			<div id="post-content-detail" class="clearfix" style="text-align : justify; line-height: 30px;">
+				{{newpaper.content}}
+
+				{% if newpaper.author != None %}
+				<p id="signature">{{newpaper.author}}</p>
+				{% endif %}
+			</div>
+
+			<div class="fb-comments clearfix" data-href="https://www.facebook.com/DDC-Center-251501805665166/" data-width="800" data-numposts="10" style="padding-bottom: 30px;">
+			</div>
+
+			<div id="interested" class="clearfix">
+				<div id="interested-title">
+					<p class="text-tran">bài viết liên quan</p>
+				</div>
+
+				<div id="interested-post">
+					{% if relationnewpaper != None %}
+						{% for item in relationnewpaper %}
+							<div class="sigle-post fl-left">
+								<a href="/detail/{{item.slug}}">
+									<div class="interested-post-image clearfix">
+										{% if item.thumbnail != None %}
+											<img src="{{item.thumbnail}}" alt="" class="image">
+										{% else %}
+											<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+										{% endif %}
+									</div>
+									<div class="interested-post-title">
+										<p>{{item.title}}</p>
+									</div>
+								</a>
+							</div>
+						{% endfor %}
+					{% endif %}
+
+				</div>
+			</div>
+		</div>
+		{% endif %}
+	</div>
+{% endblock %}

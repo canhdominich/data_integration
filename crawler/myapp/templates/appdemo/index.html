@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show DB</title>
+</head>
+<body>
+        <table>
+            <thead>
+                <tr>
+                    <td >ID</td>
+                    <td >Title</td>
+                    <td>Category</td>
+                    <td>Author</td>
+                    <td>Created At</td>
+                    <td>Updated At</td>
+                </tr>
+            </thead>
+            <tbody>
+            {% for item in data %}
+                <tr style="border: 1px solid black;">
+                    <td>{{item.id}}</td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.category}}</td>
+                    <td>{{item.author}}</td>
+                    <td>{{item.created_at}}</td>
+                    <td>{{item.updated_at}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr style="border: 1px solid black;">
+                    <td >ID</td>
+                    <td>Title</td>
+                    <td>Category</td>
+                    <td>Author</td>
+                    <td>Created At</td>
+                    <td>Updated At</td>
+                </tr>
+            </tfoot>
+        </table>
+<p>Có tất cả {{total}} bản ghi</p>
+</body>
+</html>

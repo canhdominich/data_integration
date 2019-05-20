@@ -1,0 +1,198 @@
+#wp-category{
+	padding-bottom: 40px;
+	border-bottom: 1px solid #01a050;
+}
+
+#category-cover{
+	padding-top: 20px;
+	box-sizing: border-box;
+}
+
+#category-cover #category-cover-image{
+	width: 405px;
+	height: 270px;
+	box-sizing: border-box;
+}
+
+#category-cover-image .image{
+	width: 100%;
+	height: auto;
+	max-height: 270px;
+}
+
+#category-cover-title{
+	width: 390px;
+	padding-left: 30px;
+	box-sizing: border-box;
+}
+
+h1{
+	font-size: 24px;
+	line-height: 33px;
+	color: #000000;
+	text-align: justify;
+}
+
+h1:hover{
+	color: #021dc6;
+}
+
+#category-cover-title #category-cover-description{
+	padding-top: 20px;
+	color: #3f3f3f;
+}
+
+#category-cover-description p{
+	font-size: 15px;
+	line-height: 27px;
+}
+
+#category-list-post{
+	padding-top: 30px;
+	box-sizing: border-box;
+}
+
+#category-post-left{
+	width: 405px;
+	padding-right: 15px;
+	box-sizing: border-box;
+}
+
+#category-post-right{
+	width: 390px;
+	padding-left: 30px;
+	box-sizing: border-box;
+}
+
+#category-post-left>ul>li{
+	padding-top: 20px;
+}
+
+#category-post-right>ul>li{
+	padding-top: 20px;
+}
+
+
+.category-post-image{
+	width: 120px;
+	height: 75px;
+	box-sizing: border-box;
+}
+
+#category-post-title-left{
+	width: 270px;
+	padding-left: 20px;
+	box-sizing: border-box;
+}
+
+#category-list-post p:hover{
+	color: #021dc6;
+}
+
+#category-post-title-right{
+	width: 240px;
+	padding-left: 20px;
+	box-sizing: border-box;
+}
+
+
+.category-post-image .image{
+	width: 100%;
+	height: auto;
+	max-height: 75px;
+}
+
+.category-post-title{
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.category-post-title p{
+	color: #000000;
+	font-weight: bold;
+}
+
+
+/*2*/
+
+#wp-list-post{
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#wp-list-post>ul>li{
+	height: 150px;
+	margin-top: 40px;
+	box-sizing: border-box;
+}
+
+.category-list-post-image{
+	width: 250px;
+	height: 140px;
+	box-sizing: border-box;
+}
+
+.category-list-post-image .image{
+	width: 100%;
+	height: auto;
+	max-height: 140px;
+}
+
+.category-list-post-detail{
+	width: 545px;
+	padding-left: 20px;
+	box-sizing: border-box;
+}
+
+.category-list-post-description{
+	font-size: 14px;
+	line-height: 24px;
+	color: #3f3f3f;
+	padding-top: 15px;
+}
+
+h2:hover{
+	color: #021dc6;
+}
+
+/*phan trang*/
+
+#wp-pagination{
+   padding-top: 50px;
+}
+
+#pagination-left{
+	width: 250px;
+}
+
+#pagination-right{
+	width: 545px;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+
+#wp-pagination ul li{
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	margin-left: 8px;
+	padding-top: 5px;
+	border: 1px solid #dfdbdb;
+	float: left;
+	box-sizing: border-box;
+}
+
+#wp-pagination span{
+	font-size: 14px;
+}
+
+#wp-pagination ul li:hover{
+	background: #01a050;
+	color: #fff;
+	transition: all 0.25s;
+}
+
+.current-page{
+	background: #01a050;
+	color: #fff;
+}

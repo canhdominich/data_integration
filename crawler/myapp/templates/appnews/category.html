@@ -1,0 +1,177 @@
+{% extends "appnews/layout.html" %}
+{% load staticfiles %}
+{% block css %}
+	<link rel="stylesheet" href="{% static 'stylenews/css/category.css' %}">
+{% endblock %}
+
+{% block content %}
+	<div id="content" class="fl-left clearfix">
+				<div id="wp-category" class="clearfix">
+					{% if firstnewpaper != None %}
+					<div id="category-cover" class="clearfix">
+						<a href="/detail/{{firstnewpaper.slug}}">
+							<div id="category-cover-image" class="fl-left">
+								{% if firstnewpaper.thumbnail != None %}
+									<img src="{{firstnewpaper.thumbnail}}" alt="" class="image">
+								{% else %}
+									<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+								{% endif %}
+							</div>
+							<div id="category-cover-title" class="fl-left">
+								<div class="clearfix">
+									<h1>
+										{% if firstnewpaper != None %}
+											{{firstnewpaper.title}}
+										{% endif %}
+									</h1>
+								</div>
+								<div id="category-cover-description">
+									<p class="text-justify">
+										{% if firstnewpaper != None %}
+											{{firstnewpaper.description}}
+										{% endif %}
+									</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					{% endif %}
+
+					<div id="category-list-post">
+						<div id="category-post-left" class="fl-left">
+							<ul class="clearfix">
+								{% if featurenewsleft != None %}
+									{% for item in featurenewsleft %}
+										<li class="clearfix">
+											<a href="/detail/{{item.slug}}">
+												<div class="category-post-image fl-left">
+													{% if item.thumbnail != None %}
+														<img src="{{item.thumbnail}}" alt="" class="image">
+													{% else %}
+														<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+													{% endif %}
+												</div>
+												<div id="category-post-title-left" class="category-post-title fl-right">
+													<p>
+														{{item.title}}
+													</p>
+												</div>
+											</a>
+										</li>
+									{% endfor %}
+								{% endif %}
+							</ul>
+						</div>
+
+						<div id="category-post-right" class="fl-right">
+							<ul class="clearfix">
+								{% if featurenewsright != None %}
+									{% for item in featurenewsright %}
+										<li class="clearfix">
+											<a href="/detail/{{item.slug}}">
+												<div class="category-post-image fl-left">
+													{% if item.thumbnail != None %}
+														<img src="{{item.thumbnail}}" alt="" class="image">
+													{% else %}
+														<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+													{% endif %}
+												</div>
+												<div id="category-post-title-right" class="category-post-title fl-right">
+													<p>
+														{{item.title}}
+													</p>
+												</div>
+											</a>
+										</li>
+									{% endfor %}
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div id="wp-list-post">
+					<ul>
+						{% if newspaper != None %}
+							{% for item in newspaper %}
+								<li>
+									<a href="/detail/{{item.slug}}">
+										<div>
+											<div class="category-list-post-image fl-left">
+												{% if item.thumbnail != None %}
+													<img src="{{item.thumbnail}}" alt="" class="image">
+												{% else %}
+													<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+												{% endif %}
+											</div>
+
+											<div class="category-list-post-detail fl-right">
+												<div class="category-list-post-title clearfix">
+													<h2 style="font-size: 20px; line-height: 27px;">
+														{{item.title}}
+													</h2>
+												</div>
+												<div class="clearfix">
+													<span></span>
+												</div>
+												<div class="category-list-post-description clearfix">
+													<p class="text-justify">
+														 Sau cuộc gặp với người đứng đầu Ủy ban châu Âu (EC), Tổng thống Mỹ Donald Trump đã rút lại lời đe dọa tăng thuế với ô tô nhập khẩu. Việc này đã làm hạ nhiệt căng thẳng trong quan hệ thương mại giữa Mỹ và Liên minh châu Âu (EU).
+													</p>
+												</div>
+											</div>
+										</div>
+									</a>
+								</li>
+							{% endfor %}
+						{% endif %}
+					</ul>
+				</div>
+
+				<div id="wp-pagination">
+					<div>
+						<div id="pagination-right" class="fl-left">
+
+						</div>
+
+						<div  id="pagination-right" class="fl-right pagination">
+							<ul>
+								{% if newspaper.has_previous %}
+									<li>
+											<a href="?page=1">
+												<span>First</span>
+											</a>
+									</li>
+									<li>
+											<a href="?page={{newspaper.previous_page_number}}">
+												<span><<</span>
+											</a>
+									</li>
+								{% endif %}
+
+								<li class="current-page">
+									<span>
+										{{ newspaper.number }}
+									</span>
+								</li>
+
+								{% if newspaper.has_next %}
+									<li>
+										<a href="?page={{newspaper.next_page_number}}">
+											<span>
+												>>
+											</span>
+										</a>
+									</li>
+									<li>
+											<a href="?page={{newspaper.paginator.num_pages}}">
+												<span>Last</span>
+											</a>
+									</li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+{% endblock %}

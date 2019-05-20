@@ -1,0 +1,362 @@
+{% extends "appnews/layout.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <div id="wr-content" class="wp-inner clearfix">
+			<div id="content" class="fl-left">
+				<div id="wp-cover" class="clearfix">
+					<div id="post-cover" class="widget-feature fl-left">
+						<div id="post-cover-image" class="clearfix">
+							{% if firstnewpaper != None %}
+								<a href="/detail/{{firstnewpaper.slug}}">
+										{% if firstnewpaper.thumbnail != None %}
+														<img src="{{firstnewpaper.thumbnail}}" alt="" class="image">
+										{% else %}
+											<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+										{% endif %}
+								</a>
+							{% endif %}
+						</div>
+						<div id="post-cover-title" class=" clearfix">
+							<h1>
+								{% if firstnewpaper != None %}
+									{{firstnewpaper.title}}
+								{% endif %}
+							</h1>
+						</div>
+						<div id="post-cover-description" class="clearfix">
+							<p class="text-justify">
+								{% if firstnewpaper != None %}
+									{{firstnewpaper.description}}
+								{% endif %}
+							</p>
+							<p class="text-justify">
+								{% if firstnewpaper != None %}
+									{{ firstnewpaper.content|slice:":500"  }}
+								{% endif %}
+							</p>
+						</div>
+					</div>
+
+					<div id="widget-content" class="fl-right">
+						<ul class="list-post">
+							{% if featurenewspaper != None %}
+								{% for item in featurenewspaper %}
+									<li>
+										<a href="/detail/{{item.slug}}">
+											<div class="fl-left list-post-image">
+												{% if item.thumbnail != None %}
+													<img src="{{item.thumbnail}}" alt="" class="image">
+												{% else %}
+													<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+												{% endif %}
+											</div>
+											<div class="fl-right list-post-title">
+												<h2>{{item.title}}</h2>
+											</div>
+										</a>
+									</li>
+								{% endfor %}
+							{% endif %}
+						</ul>
+					</div>
+				</div>
+
+				<div id="wp-feature" class="clearfix">
+					<div class="category clearfix">
+						<a href="category/1">
+							<div class="category-detail">
+								<p class="text-tran text-center">
+									Sự kiện
+								</p>
+							</div>
+						</a>
+					</div>
+
+					<div id="feature-cat" class="clearfix">
+						{% if feature_eve != None %}
+								<div class="fl-left widget-feature">
+									<div class="widget-title clearfix">
+										<a href="/detail/{{feature_eve.slug}}">{{feature_eve.title}}</a>
+									</div>
+									<div class="sub-widget-feature">
+										<div class="widget-image fl-left">
+											<a href="">
+												{% if feature_eve.thumbnail != None %}
+													<img src="{{feature_eve.thumbnail}}" alt="" class="image">
+												{% else %}
+													<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+												{% endif %}
+											</a>
+										</div>
+										<div class="widget-desciption fl-right">
+											<p class="text-justify">{{feature_eve.description}}</p>
+										</div>
+									</div>
+								</div>
+						{% endif %}
+
+						<div id="widget-content" class="fl-right">
+							<ul class="list-post">
+								{% if eve != None %}
+									{% for item in eve %}
+										<li>
+											<a href="/detail/{{item.slug}}">
+												<div class="fl-left list-post-image">
+													{% if item.thumbnail != None %}
+														<img src="{{item.thumbnail}}" alt="" class="image">
+													{% else %}
+														<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+													{% endif %}
+												</div>
+												<div class="fl-right list-post-title">
+													<h2>{{item.title}}</h2>
+												</div>
+											</a>
+										</li>
+									{% endfor %}
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div id="wp-feature" class="clearfix">
+					<div class="category clearfix">
+						<a href="category/2">
+							<div class="category-detail">
+								<p class="text-tran text-center">
+									Thế giới
+								</p>
+							</div>
+						</a>
+					</div>
+
+					<div id="feature-cat" class="clearfix">
+						{% if feature_wod != None %}
+								<div class="fl-left widget-feature">
+									<div class="widget-title clearfix">
+										<a href="/detail/{{feature_wod.slug}}">{{feature_wod.title}}</a>
+									</div>
+									<div class="sub-widget-feature">
+										<div class="widget-image fl-left">
+											<a href="/detail/{{feature_wod.slug}}">
+												{% if feature_wod.thumbnail != None %}
+													<img src="{{feature_wod.thumbnail}}" alt="" class="image">
+												{% else %}
+													<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+												{% endif %}
+											</a>
+										</div>
+										<div class="widget-desciption fl-right">
+											<p class="text-justify">{{feature_wod.description}}</p>
+										</div>
+									</div>
+								</div>
+						{% endif %}
+
+						<div id="widget-content" class="fl-right">
+							<ul class="list-post">
+								{% if wod != None %}
+									{% for item in wod %}
+										<li>
+											<a href="/detail/{{item.slug}}">
+												<div class="fl-left list-post-image">
+													{% if item.thumbnail != None %}
+														<img src="{{item.thumbnail}}" alt="" class="image">
+													{% else %}
+														<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+													{% endif %}
+												</div>
+												<div class="fl-right list-post-title">
+													<h2>{{item.title}}</h2>
+												</div>
+											</a>
+										</li>
+									{% endfor %}
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div id="wp-feature" class="clearfix">
+					<div class="category clearfix">
+						<a href="category/3">
+							<div class="category-detail">
+								<p class="text-tran text-center">
+									Sức khỏe
+								</p>
+							</div>
+						</a>
+					</div>
+
+					<div id="feature-cat" class="clearfix">
+						{% if feature_eve != None %}
+								<div class="fl-left widget-feature">
+									<div class="widget-title clearfix">
+										<a href="/detail/{{feature_eve.slug}}">{{feature_eve.title}}</a>
+									</div>
+									<div class="sub-widget-feature">
+										<div class="widget-image fl-left">
+											<a href="">
+												{% if feature_eve.thumbnail != None %}
+													<img src="{{feature_eve.thumbnail}}" alt="" class="image">
+												{% else %}
+													<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+												{% endif %}
+											</a>
+										</div>
+										<div class="widget-desciption fl-right">
+											<p class="text-justify">{{feature_eve.description}}</p>
+										</div>
+									</div>
+								</div>
+						{% endif %}
+
+						<div id="widget-content" class="fl-right">
+							<ul class="list-post">
+								{% if eve != None %}
+									{% for item in eve %}
+										<li>
+											<a href="">
+												<div class="fl-left list-post-image">
+													{% if item.thumbnail != None %}
+														<img src="{{item.thumbnail}}" alt="" class="image">
+													{% else %}
+														<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+													{% endif %}
+												</div>
+												<div class="fl-right list-post-title">
+													<h2>{{item.title}}</h2>
+												</div>
+											</a>
+										</li>
+									{% endfor %}
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div id="wp-feature" class="clearfix">
+					<div class="category clearfix">
+						<a href="category/4">
+							<div class="category-detail">
+								<p class="text-tran text-center">
+									Giáo dục
+								</p>
+							</div>
+						</a>
+					</div>
+
+					<div id="feature-cat" class="clearfix">
+						{% if feature_edu != None %}
+								<div class="fl-left widget-feature">
+									<div class="widget-title clearfix">
+										<a href="/detail/{{feature_edu.slug}}">{{feature_edu.title}}</a>
+									</div>
+									<div class="sub-widget-feature">
+										<div class="widget-image fl-left">
+											<a href="/detail/{{feature_edu.slug}}">
+												{% if feature_edu.thumbnail != None %}
+													<img src="{{feature_edu.thumbnail}}" alt="" class="image">
+												{% else %}
+													<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+												{% endif %}
+											</a>
+										</div>
+										<div class="widget-desciption fl-right">
+											<p class="text-justify">{{feature_edu.description}}</p>
+										</div>
+									</div>
+								</div>
+						{% endif %}
+
+						<div id="widget-content" class="fl-right">
+							<ul class="list-post">
+								{% if edu != None %}
+									{% for item in edu %}
+										<li>
+											<a href="/detail/{{item.slug}}">
+												<div class="fl-left list-post-image">
+													{% if item.thumbnail != None %}
+														<img src="{{item.thumbnail}}" alt="" class="image">
+													{% else %}
+														<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+													{% endif %}
+												</div>
+												<div class="fl-right list-post-title">
+													<h2>{{item.title}}</h2>
+												</div>
+											</a>
+										</li>
+									{% endfor %}
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div id="wp-feature" class="clearfix">
+					<div class="category clearfix">
+						<a href="category/5">
+							<div class="category-detail">
+								<p class="text-tran text-center">
+									Công nghệ
+								</p>
+							</div>
+						</a>
+					</div>
+
+					<div id="feature-cat" class="clearfix">
+						{% if feature_tec != None %}
+								<div class="fl-left widget-feature">
+									<div class="widget-title clearfix">
+										<a href="/detail/{{feature_tec.slug}}">{{feature_tec.title}}</a>
+									</div>
+									<div class="sub-widget-feature">
+										<div class="widget-image fl-left">
+											<a href="">
+												{% if feature_eve.thumbnail != None %}
+													<img src="{{feature_tec.thumbnail}}" alt="" class="image">
+												{% else %}
+													<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+												{% endif %}
+											</a>
+										</div>
+										<div class="widget-desciption fl-right">
+											<p class="text-justify">{{feature_tec.description}}</p>
+										</div>
+									</div>
+								</div>
+						{% endif %}
+
+						<div id="widget-content" class="fl-right">
+							<ul class="list-post">
+								{% if tec != None %}
+									{% for item in tec %}
+										<li>
+											<a href="/detail/{{item.slug}}">
+												<div class="fl-left list-post-image">
+													{% if item.thumbnail != None %}
+														<img src="{{item.thumbnail}}" alt="" class="image">
+													{% else %}
+														<img src="https://i-sohoa.vnecdn.net/2019/05/16/Screen-Shot-2019-05-16-at-8-30-1510-1389-1557970821.png" alt="" class="image">
+													{% endif %}
+												</div>
+												<div class="fl-right list-post-title">
+													<h2>{{item.title}}</h2>
+												</div>
+											</a>
+										</li>
+									{% endfor %}
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{% endblock %}
+

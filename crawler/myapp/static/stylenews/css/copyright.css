@@ -1,0 +1,16 @@
+#copyright{
+	width: 100%;
+	height: 40px;
+	background: #fff;
+	padding : 15px;
+	color: #25282b;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+
+#copyright .icon-copyright:after{
+	font-family: "FontAwesome";
+	content: "\f1f9";
+	padding-right : 5px;
+	font-size: 14px;
+}

@@ -1,0 +1,174 @@
+#wr-content{
+	box-sizing: border-box;
+}
+
+#wr-content #content{
+	width: 830px;
+	padding-right: 35px;
+	box-sizing: border-box;
+}
+
+/*content->post-cover||widget*/
+.widget-feature{
+	width: 490px;
+	padding-right: 5px;
+	box-sizing: border-box;
+}
+
+#post-cover{
+	padding-top: 30px;
+	border-right-style: 1px solid #fdfdfd;
+}
+
+#post-cover #post-cover-image{
+	width: 485px;
+	height: 290px;
+	box-sizing: border-box;
+}
+
+#post-cover #post-cover-image .image{
+	width: 90%;
+	height: auto;
+	max-height: 290px;
+}
+
+#post-cover #post-cover-title{
+	padding-top: 35px;
+	color: #3f3f3f;
+	line-height: 33px;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#post-cover #post-cover-title:hover{
+	color: #4e62df;
+	cursor: pointer;
+}
+
+#post-cover #post-cover-description{
+	padding-top: 35px;
+	padding-right: 5px;
+	text-align: justify;
+	color: black;
+	line-height: 27px;
+	font-size: 15px;
+}
+
+/*content->list-post-cover*/
+#widget-content{
+	width: 300px;
+	padding-top: 30px;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+
+.list-post li{
+	box-sizing: border-box;
+	height: 95px;
+	padding-bottom: 20px; 
+	font-weight: 500;
+}
+
+.list-post-image{
+	width: 125px;
+	height: 55px;
+	box-sizing: border-box;
+}
+
+.list-post-title{
+	width: 160px;
+	padding-left: 5px;
+	color: black;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: justify;
+}
+
+h2{
+	color: #3f3f3f;
+	font-weight: 600;
+}
+
+.list-post-title h2:hover{
+	color: #021dc6;
+}
+
+
+/*public*/
+.list-post-image .image{
+	width: 75%;
+    height: auto;
+    max-height: 55px;
+    border: 1px solid #f3f1f1;
+}
+
+
+/*feature-cat*/
+.sub-widget-feature{
+	padding-top: 25px;
+	height: 140px;
+	box-sizing: border-box;
+}
+
+#wp-feature{
+	padding-top: 30px;
+}
+
+#wp-feature .category{
+	height: 45px;
+	border-bottom: 1px solid #01a050;
+	box-sizing: border-box;
+}
+
+#wp-feature .category .category-detail{
+	width: 115px;
+	height: 45px;
+	background: #01a050;
+	box-sizing: border-box;
+}
+
+.category-detail p{
+	font-weight: bold;
+	color: #fff;
+	padding-top: 10px;
+	font-size: 18px;
+}
+
+.widget-title{
+	padding-top: 25px;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+
+.widget-title a{
+	color: #3f3f3f;
+}
+
+.widget-title a:hover{
+	color: #4e62df;
+}
+
+
+.widget-image{
+	width: 205px;
+	height: 140px;
+	padding-right: 5px;
+	box-sizing: border-box;
+}
+
+.widget-image .image{
+	width: 100%;
+	height: auto;
+	max-height: 140px;
+}
+
+.widget-desciption{
+	width: 270px;
+	padding-right: 5px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+
+
+

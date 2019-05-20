@@ -1,0 +1,101 @@
+#footer{
+	margin-top: 80px;
+	width: 100%;
+	background: #01a050;
+	color: #fff;
+	padding-top : 50px;
+	box-sizing: border-box;
+}
+
+/*title*/
+#footer .footer-title{
+	font-size: 18px;
+	padding-left: 0px;
+	padding-bottom: 10px;
+	max-height: 50px;
+}
+
+#about, #fanpage{
+	width: 30%;
+	box-sizing: border-box;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+#category, #contact{
+	width: 20%;
+	box-sizing: border-box;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+#text-about, #text-category, #text-contact, #text-fanpage{
+	padding-top: 20px;
+	padding-bottom: 50px;
+}
+
+#text-about p{
+	font-size: 15px;
+	line-height: 20px;
+}
+
+#text-contact p{
+	font-size: 15px;
+	line-height: 30px;
+}
+
+
+#category #text-category a{
+	font-size: 15px;
+	line-height: 40px;
+	color: #fff;
+	text-transform: capitalize;
+}
+
+#category #text-category a:hover{
+	color: #b4b9b6;
+}
+
+
+#fanpage #text-fanpage{
+	width: 100%;
+	height: 250px;
+	box-sizing: border-box;
+}
+
+#fanpage .video{
+	width: 100%;
+	min-height: 200px;
+	height: auto;
+}
+
+.list:after{
+	font-family: "FontAwesome";
+	content: "\f054";
+	padding-right : 10px;
+	font-size: 12px;
+}
+
+.tel:after{
+	font-family: "FontAwesome";
+	content: "\f2a0";
+	padding-right : 10px;
+	font-size: 14px;
+}
+
+.email:after{
+	font-family: "FontAwesome";
+	content: "\f0e0";
+	padding-right : 10px;
+	font-size: 12px;
+}
+
+.address:after{
+	font-family: "FontAwesome";
+	content: "\f015";
+	padding-right : 10px;
+	font-size: 14px;
+}
+
+
+
